@@ -41,44 +41,30 @@ def get_filters():
     
     #Create a conditional flow based on the input for the date filter
     #If the input is both
-    if filter_date == 'both':
-        month= input('\nPlease enter the month to filter by (January thru June): ').lower()
+    if filter_date in ['both','month','date']:
+        if filter_date in ['both','month']:
+            month= input('\nPlease enter the month to filter by (January thru June): ').lower()
         
-        #If the input is not all or one of the months in the list, then initiate a while loop
-        while month not in months:
-            month= input('That was not a valid choice. Please enter the month to filter by: ').lower()
-        day= input('\nPlease enter the day of week to filter by: ').lower()
-        #If the input is not all or one of the days of the week in the list, then initiate a while loop
-        while day not in days_of_week:
+            #If the input is not all or one of the months in the list, then initiate a while loop
+            while month not in months:
+                month= input('That was not a valid choice. Please enter the month to filter by: ').lower()
+        if filter_date in ['both','day']:
+            day= input('\nPlease enter the day of week to filter by: ').lower()
+            #If the input is not all or one of the days of the week in the list, then initiate a while loop
+            while day not in days_of_week:
                 day= input('That was not a valid choice.  Please enter the day of week to filter by: ').lower()
-                
-    #If the input is month         
-    elif filter_date == 'month':
-        month= input('\nPlease enter the month to filter by: ').lower()
-        #If the input is not all or one of the months in the list, then initiate a while loop
-        while month not in months:
-            month= input('That was not a valid choice. Please enter the month to filter by: ').lower()
-        day= 'all'
-
-    #If the input is day
-    elif filter_date == 'day':
-        day= input('\nPlease select the day of week to filter by: ').lower()
-        #If the input is not all or one of the days of the week in the list, then initiate a while loop
-        while day not in days_of_week:
-                day= input('That was not a valid choice.  Please enter the day of week to filter by: ').lower()
-        month= 'all'
-
-    #If the input is none
-    elif filter_date == 'none':
-        month= 'all'
-        day= 'all'
-
-    if filter_date in ['month','day','both']:
+        if filter_date=='month':
+            day= 'all'
+        if filter_date=='day':
+            month= 'all'
         print('\nApplying filter now...')
         print('*'*80)
         time.sleep(1)
 
+    #If the input is none
     else:
+        month= 'all'
+        day= 'all'
         print('*'*80)
         
     return city, month, day
