@@ -18,6 +18,8 @@ time_of_day= ['12 AM','1 AM','2 AM','3 AM','4 AM','5 AM','6 AM','7 AM','8 AM','9
     
 def get_filters():
 
+    """Retrieves the value of 3 variables - city, month, day - that will be used to load the dataframe data"""
+
     print('Hello! Let\'s explore some US bikeshare data!')
 
     #Declare city, month, and day as global variables, so they can be seen outside the scope of this function
