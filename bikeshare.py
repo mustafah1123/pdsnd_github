@@ -20,7 +20,7 @@ def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    #Declare city, month, and day as global variables, so they can be seen outside th scope of this function
+    #Declare city, month, and day as global variables, so they can be seen outside the scope of this function
     global city
     global month
     global day
