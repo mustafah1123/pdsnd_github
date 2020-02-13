@@ -227,6 +227,8 @@ def user_stats(df):
 
 def raw_data(df):
 
+    """Display raw data to user"""
+
     answer= input('Would you like to see individual data? Enter yes or no. ').lower()
 
     #Enter conditional flow if first answer is yes
